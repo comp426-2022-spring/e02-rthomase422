@@ -40,10 +40,19 @@ function App() {
 // 1. Create other variables for assignments, exams, and engagement here
     let currentA00 = document.querySelector('#a00').value
     let currentA01 = document.querySelector('#a01').value
+    let currentA05 = document.querySelector('#a05').value
+//	...
+	  let currentMidterm = document.querySelector('#midterm').value
+//	...
+	  let currentCommits = document.querySelector('#commits').value
+//	...
+	  let currentE02 = document.querySelector('#e02').value
+//...
+
     if(currentSum==='')
     return;
 // 2. This line is where you add the points all together. Add your other variable references here. Make sure that they match what is above and what is below in the HTML form
-    let sum = parseInt(currentA00) + parseInt(currentA01);
+    let sum = parseInt(currentA00) + parseInt(currentA01) + parseInt(currentA05) + parseInt(currentMidterm) + parseInt(currentCommits) + parseInt(currentE02);
     setCurrentSum(sum);
   }
 
@@ -64,6 +73,10 @@ function App() {
             <button onClick={Clear}>Clear</button>
             <label for="result"><b>Result:</b></label>
             <input type="text" id="result" value={currentSum} readOnly />
+            <input type="text" id="a05" placeholder="a05 Human Interface" /><br/><br/>
+            <input type="text" id="midterm" placeholder="Midterm" /><br/><br/>
+            <input type="text" id="commits" placeholder="GH Commits" /><br/><br/>
+            <input type="text" id="e02" placeholder="e02 React" /><br/><br/>
       </form>
     </div>
   );
